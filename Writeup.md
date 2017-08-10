@@ -33,8 +33,6 @@ The goals / steps of this project are the following:
 ---
 ###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
 You're reading it! and here is a link to my [project code](https://github.com/lepeuvedic/CarND-Traffic-Sign-Classifier-Project/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
@@ -55,7 +53,7 @@ I used the pandas library to calculate the number of unique classes of the traff
 
 When examined in greater detail, the dataset apprears unbalanced. The least represented classes have 180 images, while the most represented ones have almost ten times more.
 
-
+```
 Histogram:
        0    1    2  ClassId                                           SignName
 0    180   30   60        0                               Speed limit (20km/h)
@@ -101,7 +99,7 @@ Histogram:
 40   300   60   90       40                               Roundabout mandatory
 41   210   30   60       41                                  End of no passing
 42   210   30   90       42  End of no passing by vehicles over 3.5 metric ...
-
+```
 
 [//]: # (Image References)
 
@@ -226,16 +224,19 @@ The training takes roughlty 30 minutes on a NVIDIA K520 Grid GPU installed on an
 [image11]: ./panneaux/SpeedBumpAheadFR_sign.jpg "Speed bump ahead Sign 8"
 [image12]: ./panneaux/InterditAuxPlus8tFR_sign.jpg "Entry prohibited for vehicles over 8 tons Sign 9"
 [image13]: ./panneaux/PedestrianCrossingFR_sign.jpg "Pedestrian crossing ahead Sign 10"
+[image14]: ./panneaux/new_signs.png "New signs found on the web and their solutions"
+{image15]: ./panneaux/recolored_sign.png "Learnt color space transformation applied to web traffic signs"
+[image16]: /panneaux/recolored.png "How learnt color space transformation affects colour"
 
 Here are five German traffic signs that I found on the web:
 
-| German traffic signs:                    |
+| German traffic signs:                    | | | | | |
 |:-------:|:-----------:|:--------------:|:--------------:|:--------------:|:------------:|
 | | ![no stopping][image8] | ![speed limit 120 km/h][image7] | ![general danger][image4] | ![speed limit 30 km/h][image10] | ![speed limit 70 km/h][image5] | 
 
-And five European signs, looking close but slightly different. Drivers are allowed to travel all across Europe without any specific training.
+And five European signs, looking close but slightly different. Drivers are allowed to travel all across Europe without any specific training.| | | | |
 
-| Five European traffic signs:                    |
+| Five European traffic signs:                    | | | | | |
 |:-------:|:-----------:|:--------------:|:--------------:|:--------------:|:------------:|
 | | ![entry prohibited to coaches][image6] | ![twelve percent slope ahead][image9] | ![speed bump ahead][image11] | ![entry prohibited to vehicles weighting more than 8 metric tons][image12] | ![pedestrian crossing ahead][image13]
 
@@ -248,7 +249,7 @@ Of course, the learning algorithm has never seen the five non-german European si
 and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
-![new_signs.png](attachment:new_signs.png)
+![bar graphs showing prediction result][image14]
 
 The model was able to correctly guess 4 of the 5 German traffic signs, which gives an accuracy of 80%. Being round with a red outline, the parking sign is classified as a speed limit. 
 
@@ -275,11 +276,11 @@ In order to facilitate learning, the initial value of the weights is zero for th
 Whatever the weights of these three layers are, the layers always perform a simple pixel color to pixel color transformation.
 Synthetic images containing a wide choice of pixel values have been run through those graph stages. The image below gives in the left column, the synthetic image, which contains shades of single color, and on the right the modified color.
 
-![recolored.png](attachment:recolored.png)
+![recolored synthetic pictures](image16)
 
 Of course, there are many more pixel values possible than those 7 pictures can contain, and the function can be highly non linear. In order to judge the effect, the pictures gathered on the web have been processed by those color mapping layers, and the results are in the following table.
 
-![recolored_signs.png](attachment:recolored_signs.png)
+![recolored_real pictures](image15)
 
 The output seems to correspond to an intuitive application of the color maps depicted in the color shade images. All the dark areas are converted to a reddish tint. The other colors are converted to lighter tints. White is an exception, as it is obvious that anything bright enough to be white is 
 
