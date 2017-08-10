@@ -122,12 +122,11 @@ The preprocessing library includes a recode() function which can change the way 
 
 Finally, I decided as a late improvement to generate additional data. This was mainly an opportunity because I found a suitable Python function while Googling for information on how to visualize the trained weights. The added step produced a small, but significant improvement of the network accuracy. The generation of additional data is performed last, because the brightness adjustment and encoding conversion are done only once on the original images. The generation of new data is done by flipping symmetric traffic signs, or rotating them 180° in some cases (end of speed limit). Some asymetric signs are also flipped left-to-right, if their symmetric counterpart also exists. For instance, "Keep right" and "Keep left" subsets can each be extended by the horizontally flipped version of the images from the other subset. This last step almost doubles the amount of training data available.
 
-
 | Original image                       | Image with brightness adjusted                |
 |:------------------------------------:|:---------------------------------------------:|
-|![dark1.png](attachment:dark1.png)    |![light1.png](attachment:light1.png)           |
-|![dark2.png](attachment:dark2.png)    |![light2.png](attachment:light2.png)           |
-|![dark3.png](attachment:dark3.png)    |![light3.png](attachment:light3.png)           |
+|![dark1.png](./panneaux/dark1.png)    |![light1.png](./panneaux/light1.png)           |
+|![dark2.png](./panneaux/dark2.png)    |![light2.png](./panneaux/light2.png)           |
+|![dark3.png](./panneaux/dark3.png)    |![light3.png](./panneaux/light3.png)           |
 
 
 #### 2. Final Model Architecture
@@ -225,8 +224,8 @@ The training takes roughlty 30 minutes on a NVIDIA K520 Grid GPU installed on an
 [image12]: ./panneaux/InterditAuxPlus8tFR_sign.jpg "Entry prohibited for vehicles over 8 tons Sign 9"
 [image13]: ./panneaux/PedestrianCrossingFR_sign.jpg "Pedestrian crossing ahead Sign 10"
 [image14]: ./panneaux/new_signs.png "New signs found on the web and their solutions"
-{image15]: ./panneaux/recolored_sign.png "Learnt color space transformation applied to web traffic signs"
-[image16]: /panneaux/recolored.png "How learnt color space transformation affects colour"
+[image15]: ./panneaux/recolored.png "How learnt color space transformation affects colour"
+[image16]: ./panneaux/recolored_sign.png "Learnt color space transformation applied to web traffic signs"
 
 Here are five German traffic signs that I found on the web:
 
@@ -236,7 +235,7 @@ Here are five German traffic signs that I found on the web:
 
 And five European signs, looking close but slightly different. Drivers are allowed to travel all across Europe without any specific training.| | | | |
 
-| Five European traffic signs:                    | | | | | |
+| Five European traffic signs:            | | | | | |
 |:-------:|:-----------:|:--------------:|:--------------:|:--------------:|:------------:|
 | | ![entry prohibited to coaches][image6] | ![twelve percent slope ahead][image9] | ![speed bump ahead][image11] | ![entry prohibited to vehicles weighting more than 8 metric tons][image12] | ![pedestrian crossing ahead][image13]
 
@@ -276,15 +275,10 @@ In order to facilitate learning, the initial value of the weights is zero for th
 Whatever the weights of these three layers are, the layers always perform a simple pixel color to pixel color transformation.
 Synthetic images containing a wide choice of pixel values have been run through those graph stages. The image below gives in the left column, the synthetic image, which contains shades of single color, and on the right the modified color.
 
-![recolored synthetic pictures](image16)
+![recolored_synthetic_pictures][image15]
 
 Of course, there are many more pixel values possible than those 7 pictures can contain, and the function can be highly non linear. In order to judge the effect, the pictures gathered on the web have been processed by those color mapping layers, and the results are in the following table.
 
-![recolored_real pictures](image15)
+![recolored_real_pictures][image16]
 
 The output seems to correspond to an intuitive application of the color maps depicted in the color shade images. All the dark areas are converted to a reddish tint. The other colors are converted to lighter tints. White is an exception, as it is obvious that anything bright enough to be white is 
-
-
-```python
-
-```
