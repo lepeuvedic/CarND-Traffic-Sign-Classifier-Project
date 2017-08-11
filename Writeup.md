@@ -23,15 +23,12 @@ The goals / steps of this project are the following:
 
 
 
-[//]: # (Image References)
-
 
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
 
 You're reading it! and here is a link to my [project code](https://github.com/lepeuvedic/CarND-Traffic-Sign-Classifier-Project/master/Traffic_Sign_Classifier.ipynb)
 
@@ -212,6 +209,8 @@ The training takes roughlty 30 minutes on a NVIDIA K520 Grid GPU installed on an
 ### Test a Model on New Images
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report
+
+[//]: # (Image References)
 
 [image4]: ./panneaux/dangerDE_sign.jpg "General danger Sign 1"
 [image5]: ./panneaux/Vitesse70FR_sign.jpg "Traffic Sign 2"
