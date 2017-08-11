@@ -3,7 +3,7 @@
 Author : Jean-Marc Le Peuvédic
 
 Key features:
-* Reaches 96 percent accuracy on validation set, and 94.8 percent accuracy on TEST set
+* Reaches 96 percent accuracy on validation set, and 94.6 percent accuracy on TEST set
 * Color space conversion layers using 1x1 convolution added as first layers
 * Dropout implemented in fully connected layer
 
@@ -244,12 +244,10 @@ Of course, the learning algorithm has never seen the five non-german European si
 
 #### 2. Discuss the model's predictions on these new traffic signs
 
-and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
 Here are the results of the prediction:
 ![bar graphs showing prediction result][image14]
 
-The model was able to correctly guess 4 of the 5 German traffic signs, which gives an accuracy of 80%. Being round with a red outline, the parking sign is classified as a speed limit. 
+The model was able to correctly guess 4 of the 5 German traffic signs, which gives an accuracy of 80%. Being round with a red outline, the parking sign is classified as a speed limit. The accuracy on the captured images is 80% while it was 94.6% on the testing set. The number of new images is too low to reach any valid conclusion. As mentioned in the course, fewer than a few tens of images changing their class does not mean that the network is learning, or over fitting or anything. The network cannot be expected to classify something which does not belong in its ontology. What I learn from this, is that any training set should be mixed with random pictures of stuff, associated to a default class which means "something else than a traffic sign".
 
 The classifier is unambiguous (probability very close to 1.0) for the general danger sign, the 30 km/h and 70 km/h speed limits. For the 120 km/h speed limit, the probability is still very good at 91%, but the next msst probable is a 100 km/h speed limit. 
 
