@@ -224,7 +224,7 @@ The training takes roughlty 30 minutes on a NVIDIA K520 Grid GPU installed on an
 [image13]: ./panneaux/PedestrianCrossingFR_sign.jpg "Pedestrian crossing ahead Sign 10"
 [image14]: ./panneaux/new_signs.png "New signs found on the web and their solutions"
 [image15]: ./panneaux/recolored.png "How learnt color space transformation affects colour"
-[image16]: ./panneaux/recolored_sign.png "Learnt color space transformation applied to web traffic signs"
+[image16]: ./panneaux/recolored_signs.png "Learnt color space transformation applied to web traffic signs"
 
 Here are five German traffic signs that I found on the web:
 
@@ -232,7 +232,7 @@ Here are five German traffic signs that I found on the web:
 |:-------:|:-----------:|:--------------:|:--------------:|:--------------:|:------------:|
 | | ![no stopping][image8] | ![speed limit 120 km/h][image7] | ![general danger][image4] | ![speed limit 30 km/h][image10] | ![speed limit 70 km/h][image5] | 
 
-And five European signs, looking close but slightly different. Drivers are allowed to travel all across Europe without any specific training.| | | | |
+And five European signs, looking close but slightly different. Drivers are allowed to travel all across Europe without any specific training.
 
 | Five European traffic signs:            | | | | | |
 |:-------:|:-----------:|:--------------:|:--------------:|:--------------:|:------------:|
