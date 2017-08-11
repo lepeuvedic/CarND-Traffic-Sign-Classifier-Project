@@ -101,6 +101,11 @@ Histogram:
 [//]: # (Image References)
 
 [image1]: ./examples/db_visual.png "Visualization"
+[image17]: ./panneaux/histogram_classes.png "Histogram of class element count in the data set"
+
+A bar graph view makes it easier to visualise the difference in the quantity of images per class.
+![A bar graph of counts per class][image17]
+
 
 ![10 random images from the training set][image1]
 
