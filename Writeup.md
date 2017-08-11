@@ -278,4 +278,4 @@ Of course, there are many more pixel values possible than those 7 pictures can c
 
 ![recolored_real_pictures][image16]
 
-The output seems to correspond to an intuitive application of the color maps depicted in the color shade images. All the dark areas are converted to a reddish tint. The other colors are converted to lighter tints. White is an exception, as it is obvious that anything bright enough to be white is 
+The output seems to correspond to an intuitive application of the color maps depicted in the color shade images. All the dark areas are converted to a reddish tint. The other colors are converted to lighter tints. White is an exception, as it is obvious that anything bright enough to be white is saturated to white. This change makes the background color of most symbols uniform. I assume that it makes the recognition of the (most frequently black, rarely red) symbols more reliable.
